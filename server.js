@@ -7,7 +7,9 @@ const authRoutes = require("./routes/auth");
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+    origin: 'https://six4-data-intelligence-frontend.onrender.com/'
+}));
 app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
